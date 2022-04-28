@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QHBoxLayout"
 #include "QAction"
@@ -45,23 +45,23 @@ void MainWindow::mylayout()
     h2->setStretch(1,1);
 
     //第三行按钮
-    backBt   = new QPushButton("Back");
-    removeBt = new QPushButton("CE");
-    clearBt  = new QPushButton("CLS");
-    sumBt    = new QPushButton("+");
-    backBt->setMinimumHeight(50);
+    //backBt   = new QPushButton("Back");
+    removeBt = new QPushButton("后退一步(back)");
+    clearBt  = new QPushButton("清空(clear)");
+    sumBt    = new QPushButton("加(+)");
+    //backBt->setMinimumHeight(50);
     removeBt->setMinimumHeight(50);
     clearBt->setMinimumHeight(50);
     sumBt->setMinimumHeight(50);
     QHBoxLayout * h3 = new QHBoxLayout;
-    h3->addWidget(backBt);
+    //h3->addWidget(backBt);
     h3->addWidget(removeBt);
     h3->addWidget(clearBt);
     h3->addWidget(sumBt);
     sevenBt = new QPushButton("7");
     eightBt = new QPushButton("8");
     nineBt  = new QPushButton("9");
-    decBt   = new QPushButton("-");
+    decBt   = new QPushButton("减(-)");
     sevenBt->setMinimumHeight(50);
     eightBt->setMinimumHeight(50);
     nineBt->setMinimumHeight(50);
@@ -75,7 +75,7 @@ void MainWindow::mylayout()
     fourBt = new QPushButton("4");
     fiveBt = new QPushButton("5");
     sixBt  = new QPushButton("6");
-    starBt = new QPushButton("*");
+    starBt = new QPushButton("乘(*)");
     fourBt->setMinimumHeight(50);
     fiveBt->setMinimumHeight(50);
     sixBt->setMinimumHeight(50);
@@ -89,7 +89,7 @@ void MainWindow::mylayout()
     oneBt    = new QPushButton("1");
     twoBt    = new QPushButton("2");
     threeBt  = new QPushButton("3");
-    divBt    = new QPushButton("/");
+    divBt    = new QPushButton("除(/)");
     oneBt->setMinimumHeight(50);
     twoBt->setMinimumHeight(50);
     threeBt->setMinimumHeight(50);
@@ -100,16 +100,16 @@ void MainWindow::mylayout()
     h6->addWidget(threeBt);
     h6->addWidget(divBt);
 
-    _Bt      =  new QPushButton("+/-");
+    //_Bt      =  new QPushButton("+/-");
     zeroBt   =  new QPushButton("0");
     pointBt  =  new QPushButton(".");
-    equalBt  =  new QPushButton("=");
-    _Bt->setMinimumHeight(50);
+    equalBt  =  new QPushButton("等于(=)");
+    //_Bt->setMinimumHeight(50);
     zeroBt->setMinimumHeight(50);
     pointBt->setMinimumHeight(50);
     equalBt->setMinimumHeight(50);
     QHBoxLayout * h7 = new QHBoxLayout;
-    h7->addWidget(_Bt);
+    //h7->addWidget(_Bt);
     h7->addWidget(zeroBt);
     h7->addWidget(pointBt);
     h7->addWidget(equalBt);
@@ -124,7 +124,7 @@ void MainWindow::mylayout()
     mainLayout->addLayout(h7);
 
     centerWindow->setLayout(mainLayout);
-    connect(backBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtBack()));
+    //connect(backBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtBack()));
         connect(removeBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtRemove()));
         connect(clearBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtClear()));
         connect(sumBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtSum()));
@@ -140,7 +140,7 @@ void MainWindow::mylayout()
         connect(twoBt,SIGNAL(clicked(bool)),this,SLOT(onPushBttwo()));
         connect(threeBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtthree()));
         connect(divBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtdiv()));
-        connect(_Bt,SIGNAL(clicked(bool)),this,SLOT(onPushBtSign()));
+        //connect(_Bt,SIGNAL(clicked(bool)),this,SLOT(onPushBtSign()));
         connect(pointBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtPoint()));
         connect(equalBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtEqual()));
         connect(zeroBt,SIGNAL(clicked(bool)),this,SLOT(onPushBtZero()));
@@ -150,44 +150,44 @@ void MainWindow::mylayout()
 void MainWindow::addMenu()
 {
 
-    menu1=menuBar()->addMenu("选择");
-    menu1->addAction(action1);
-    menu1->addAction(action2);
-    //增加横线
-    menu1->addSeparator();
-    menu1->addAction(action3);
-    menu1->addAction(action4);
+//    menu1=menuBar()->addMenu("选择");
+//    menu1->addAction(action1);
+//    menu1->addAction(action2);
+//    //增加横线
+//    menu1->addSeparator();
+//    menu1->addAction(action3);
+//    menu1->addAction(action4);
 
-    menu2=menuBar()->addMenu("编辑");
-    menu2->addAction(action5);
-    menu2->addSeparator();
-    menu2->addAction(action6);
+//    menu2=menuBar()->addMenu("编辑");
+//    menu2->addAction(action5);
+//    menu2->addSeparator();
+//    menu2->addAction(action6);
 
-    menu3=menuBar()->addMenu("帮助");
-    menu3->addAction(action7);
-    menu3->addSeparator();
-    menu3->addAction(action8);
+//    menu3=menuBar()->addMenu("帮助");
+//    menu3->addAction(action7);
+//    menu3->addSeparator();
+//    menu3->addAction(action8);
 }
 //增加菜单栏选项
 void MainWindow::addMenuAction()
 {
-    action1 = new QAction("标准",this);
-   action1->setShortcut(tr("alt+l"));
-    action2 = new QAction("科学",this);
-    action2->setShortcut(tr("alt+2"));
-    action3 = new QAction("历史记录",this);
-    action3->setShortcut(tr("alt+3"));
-    action4 = new QAction("时间设置",this);
-    action4->setShortcut(tr("alt+4"));
-    action5 = new QAction("复制",this);
-    action5->setShortcut(tr("ctrl+1"));
-    action6 = new QAction("粘贴",this);
-    action6->setShortcut(tr("ctrl+2"));
-    action7 = new QAction("帮助",this);
-    action7->setShortcut(tr("ctrl+3"));
+    //action1 = new QAction("标准",this);
+   //action1->setShortcut(tr("alt+l"));
+    //action2 = new QAction("科学",this);
+    //action2->setShortcut(tr("alt+2"));
+    //action3 = new QAction("历史记录",this);
+    //action3->setShortcut(tr("alt+3"));
+    //action4 = new QAction("时间设置",this);
+    //action4->setShortcut(tr("alt+4"));
+    //action5 = new QAction("复制",this);
+    //action5->setShortcut(tr("ctrl+1"));
+    //action6 = new QAction("粘贴",this);
+    //action6->setShortcut(tr("ctrl+2"));
+    //action7 = new QAction("帮助",this);
+    //action7->setShortcut(tr("ctrl+3"));
 
-    action8 = new QAction("关于",this);
-    action8->setShortcut(tr("ctrl+4"));
+    //action8 = new QAction("关于",this);
+    //action8->setShortcut(tr("ctrl+4"));
 }
 void MainWindow::BeforeOperator(int iOperator)
 {
@@ -212,20 +212,20 @@ void MainWindow::init()
     operat = 0;
 
 }
-void MainWindow::onClickAbort()
-{
+//void MainWindow::onClickAbort()
+//{
 
-}
+//}
 
-void MainWindow::onClickHelp()
-{
+//void MainWindow::onClickHelp()
+//{
 
-}
+//}
 
-void MainWindow::onClickCopy()
-{
+//void MainWindow::onClickCopy()
+//{
 
-}
+//}
 
 void MainWindow::onClickPaste()
 {

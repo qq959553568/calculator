@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -6,6 +6,12 @@
 #include <QTextEdit>
 #include <QPushButton>
 #include "QAction"
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
+# pragma execution_character_set("utf-8")
+#endif
+
+
 namespace Ui {
 class MainWindow;
 }
@@ -25,7 +31,7 @@ public:
         QTextEdit * showEdit;
         QTextEdit * resultEdit;
         //按钮布局成员变量
-        QPushButton * backBt;
+        //QPushButton * backBt;
         QPushButton * removeBt;
         QPushButton * clearBt;
         QPushButton * sumBt;
@@ -45,21 +51,21 @@ public:
         QPushButton * threeBt;
         QPushButton * divBt;
 
-        QPushButton * _Bt;  //+/-按钮
+        //QPushButton * _Bt;  //+/-按钮
         QPushButton * zeroBt;
         QPushButton * pointBt;
         QPushButton * equalBt;
-        QMenu *menu1;
-        QMenu *menu2;
-        QMenu *menu3;
-        QAction *action1;
-        QAction *action2;
-        QAction *action3;
-        QAction *action4;
-        QAction *action5;
-        QAction *action6;
-        QAction *action7;
-        QAction *action8;
+        //QMenu *menu1;
+        //QMenu *menu2;
+        //QMenu *menu3;
+        //QAction *action1;
+        //QAction *action2;
+        //QAction *action3;
+        //QAction *action4;
+        //QAction *action5;
+        //QAction *action6;
+        //QAction *action7;
+        //QAction *action8;
         //显示结果
             qreal result;
             //第一个操作数
@@ -88,11 +94,11 @@ public:
         void keyPressEvent(QKeyEvent * e);
 private slots:
     //点击关于槽函数
-    void onClickAbort();
+    //void onClickAbort();
     //点击帮助槽函数
-    void onClickHelp();
+    //void onClickHelp();
     //点击复制槽函数
-    void onClickCopy();
+    //void onClickCopy();
     //点击粘贴槽函数
     void onClickPaste();
     void onPushBtone();
